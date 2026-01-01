@@ -1,6 +1,0 @@
-1.0.0
-12/31/25
-GOTTA KEEP SWINGING
-#e13535ff
-Spiderman.dll
-- Release

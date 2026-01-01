@@ -19,7 +19,6 @@ var selectedEntry = 0;
 
 createEntry("TIMELINE", "timeline.txt");
 createEntry("BL FULL BODY TRACKING", "fullbody.txt");
-createEntry("SPIDERMAN", "spiderman.txt");
 
 loadTextSettings("timeline.txt");
 
