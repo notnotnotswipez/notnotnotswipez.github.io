@@ -11,12 +11,17 @@ var defaultURL = "https://github.com/notnotnotswipez/notnotnotswipez.github.io/r
 var currentDownloadURL = "";
 var currentDownloadName = "";
 
+var selectedHighlightColor = "rgba(82, 82, 82, 1)";
+var transparentColor = "rgba(0, 0, 0, 0)";
+
+var createdEntries = 0;
+var selectedEntry = 0;
+
 createEntry("TIMELINE", "timeline.txt");
 createEntry("BL FULL BODY TRACKING", "fullbody.txt");
+createEntry("SPIDERMAN", "spiderman.txt");
 
 loadTextSettings("timeline.txt");
-
-repeatBackgroundText("LIGHTS CAMERA ACTION");
 
 downloadElement.addEventListener('click', function(){
     downloadBegin(currentDownloadURL, currentDownloadName);
@@ -53,6 +58,15 @@ function createEntry(name, fileName) {
     newElement.textContent = name;
     newElement.className = "projectEntry";
 
+    if (createdEntries == selectedEntry){
+        newElement.style.background = selectedHighlightColor
+    }
+    else {
+        newElement.style.background = transparentColor
+    }
+    
+
+    var copy = createdEntries;
     namesElement.appendChild(newElement);
     
     newElement.addEventListener('mouseenter', function() {
@@ -64,9 +78,15 @@ function createEntry(name, fileName) {
     });
 
     newElement.addEventListener('click', function() {
+        namesElement.children[selectedEntry].style.background = transparentColor;
         loadTextSettings(fileName);
         centerTitleElement.textContent = name;
+        newElement.style.background = selectedHighlightColor
+        selectedEntry = copy;
+        console.log(selectedEntry);
     });
+
+    createdEntries++;
 }
 
 function downloadBegin(link, name){
