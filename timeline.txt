@@ -1,8 +1,6 @@
-0.5.1
+0.5.2
 3/4/26
 ACTION CAMERA LIGHT
 #d9af17
 Timeline.dll
-- Guns that did not previously have support for their audio should be fixed/Improved in terms of what can be played.
-
-- Added bind (Disablable) to stop the recording. Left menu button on an empty hand.
+- Further improved gun audio support
